@@ -2,13 +2,7 @@
 // lesson 6.1. Serving static files with the fs module
 
 
-/*
-1 Create a function to interpolate the URL into the file path.
-2 Get the file-path string. 
-3 Interpolate the request URL into your fs file search. 
-4 Handle errors with a 404 response code. 
-5 Respond with file contents.
-*/
+
 // Create a function to interpolate the URL into the file path.
 const getViewUrl = (url) => {     
   if(url=='/'){
@@ -23,9 +17,7 @@ const port = 3000,
   // Require the fs module.
   fs = require("fs");
   // Set up route mapping for HTML files.
-const routeMap = {
-  "/": "views/index.html",
-};
+
 
 http
   .createServer((req, res) => {
