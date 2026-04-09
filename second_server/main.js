@@ -1,4 +1,5 @@
 // curl --data "username= Jon&password=secret" http://localhost:3000
+// lesson 5.2 analyzing request data
 const getJSONString = obj =>{
       return JSON.stringify(obj,null,2)
     }
