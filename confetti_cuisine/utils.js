@@ -1,20 +1,18 @@
-const fs = require('fs'),
-httpStatus = require('http-status-codes'),
-contentTypes = require('./contentTypes')
-// Import modules for use in getFile.
+const fs = require("fs"),
+  httpStatus = require("http-status-codes").StatusCodes,
+  contentTypes = require("./content-types");
 
-
-// Export a function to read files and return a response.
 module.exports = {
-    getFile: (file, res)=>{
-        fs.readFile(`./${file}`,(err,data)=>{
-            if(err){
-                res.writeHead(httpStatus.StatusCodes.INTERNAL_SERVER_ERROR,contentTypes.html)
-                res.end("There was an error serving content!");
-            }
-            else{
-                res.end(data)
-            }
-        })
-    }
-}
+  getFile(path, res) {
+    fs.readFile(path, (err, data) => {
+      if (err) {
+        res.writeHead(httpStatus.NOT_FOUND, {contentTypes}.text);
+        res.end("file not found path:" + path)
+
+      }
+      else{
+        res.end(data)
+      }
+    });
+  },
+};
