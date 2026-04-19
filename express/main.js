@@ -13,3 +13,4 @@ console.log(req.query);
     res.send("testing")
 
 }).listen(port,()=>console.log("listening on port: "+ port))
+

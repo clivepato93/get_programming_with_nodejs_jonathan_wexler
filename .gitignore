@@ -1,8 +1,5 @@
 routing/
 lesson_4/
-<<<<<<< HEAD
 confetti_cuisine/node_modules/
 express/node_modules/
-=======
-confetti_cuisine/node_modules/
->>>>>>> 3d1f5c7 (7.5 adding assets & 7.6 creating routes)
+express_routes/node_modules
