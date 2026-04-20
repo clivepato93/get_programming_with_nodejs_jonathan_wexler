@@ -12,6 +12,15 @@ app.use((req, res, next) => {
   next();                                        
 });
 
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
+
+app.post("/", (req, res) => {     2
+  console.log(req.body);          3
+  console.log(req.query);
+  res.send("POST Successful!");
+});
+
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
