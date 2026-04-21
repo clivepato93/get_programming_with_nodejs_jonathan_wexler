@@ -14,9 +14,13 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
+app.use((req,res,next)=>{
+  console.log(req.url)
+  next()
+})
 
-app.post("/", (req, res) => {     2
-  console.log(req.body);          3
+app.post("/", (req, res) => {
+  console.log(req.body);
   console.log(req.query);
   res.send("POST Successful!");
 });
